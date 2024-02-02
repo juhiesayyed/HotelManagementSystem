@@ -1,0 +1,238 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update Employee</title>
+    <style>
+        html, body {
+      min-height: 100%;
+      }
+
+      body, div, form, input, select, textarea, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      line-height: 50px;
+      font-size: 60px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #F9F9F9;
+      box-shadow: 0 0 15px 0 #3263cd; 
+      }
+      .banner {
+      height: 260px;
+      width:500px;
+      background-size: cover;
+      
+      }
+      .banner::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 80%;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #3263cd;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 5px 0 #3263cd;
+      color: #3263cd;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 2%;
+      top: 28px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio, label.checkbox {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      label.radio:before, label.checkbox:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      label.checkbox:before{ border-radius: 5px}
+      input[type=radio]:checked + label:before, label.radio:hover:before,
+      input[type=checkbox]:checked + label:before, label.chekbox:hover:before {
+      border: 2px solid #3263cd;
+      }
+      label.radio:after, label.checkbox:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #3263cd;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #3263cd;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #5b82d7;
+      }
+      @media (min-width: 568px) {
+      .name-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input {
+      width: calc(50% - 20px);
+      }
+      .im{
+        height:250px;
+        align-items: center;
+        justify-content: center;
+        width:500px;
+        align-content: center;
+        margin-left: 470px;
+        border-radius: 12px;
+        border-color: teal;
+        border-width: 15px;
+        border-style:double;
+      }
+      }
+    </style>
+</head>
+<body>
+<h3>{{viewTitle}}</h3>
+
+<form action="/EmployeeEdit" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" name="firstname" placeholder="First Name" value="{{employee.firstname}}">
+       
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" name="lastname" placeholder="Last Name" value="{{employee.lastname}}">
+        
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{employee.email}}">
+        
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Mobile</label>
+            <input type="text" class="form-control" name="phone" placeholder="Mobile" value="{{employee.phone}}">
+        </div>
+    </div>
+        <div class="item">
+          <p>Position</p>
+          <input type="text" name="position" value="{{employee.position}}"/>
+        </div>
+        <div class="item">
+          <p>Address</p>
+          <input type="text" name="address" value="{{employee.address}}"/>
+        </div>
+        
+        <div class="item">
+            <p>Salary</p>
+            <input type="text" name="salary" value="{{employee.salary}}"/>
+        </div>
+        
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/ShowEmp"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
+
+    
+</body>
+</html>

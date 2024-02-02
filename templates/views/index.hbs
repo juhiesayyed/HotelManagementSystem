@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AIRA Hotel</title>
+    <script src="https://kit.fontawesome.com/4772570cbb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <style>
+ 
+ .container {   
+        padding: 25px;   
+        background-color: lightblue;  
+    } 
+    
+      nav {
+        position: fixed;
+        width: 100%;
+        height: 95px;
+        /*align-items: center;
+        justify-content: center;*/
+        background-color: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7px);
+        display:grid;
+        top:0;
+        left: 0;
+      }
+      button{
+        float: right;
+        right: 0;
+        padding: 10px 20px 10px 20px;
+        margin-top: 30px;
+        margin-right: 30px;
+        background-color: #4CAF50;   
+        color: orange;   
+        border: bold;   
+        cursor: pointer;   
+      }
+
+      header{
+        position: fixed;
+        color: white;
+        width: 100%;
+        height: 95px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        top:0;
+      }
+
+      .menu{
+        /*align-items:flex-end;
+        justify-content:left;*/
+        color: white;
+        padding: 12px 30px 30px 30px;
+        font-size: 18px;
+        
+      }
+      .heading1{
+        display:inline-block;
+        font-size: 47px;
+        stroke: aliceblue;
+        font-family: 'Creepster', cursive;
+      }
+
+      i{
+        padding-left: 10px;
+        padding-top: 5px;
+      }
+
+      .fa-solid {
+        color: white;
+        shape-image-threshold: 20px;
+        font-size: 30px;
+        
+      }
+
+      /*left side menu bar*/
+      .container{
+        height: 100%;
+        top: 0;
+        width: 280px;
+        position: absolute;
+        background: #161616;
+        z-index: 1;
+        transition: 0.5s ease;
+        transform: translateX(-340px);
+      }
+
+      .container .head{
+        color: #fbfdce;
+        font-size: 25px;
+        font-weight: bold;
+        padding: 30px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 3px;
+        background: linear-gradient(30deg,#4841a4,#8d3e1c);
+        /* background: linear-gradient(30deg,#df0155,#ed4901);*/
+
+      }
+
+      ol{
+        width: 100%;
+        list-style: none;
+      }
+
+      ol li{
+        display: block;
+        width:1;
+      }
+
+      ol li a{
+        /*color: #fbfdce;*/
+        color: white;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        padding: 15px 10px;
+        text-decoration: none;
+        display: block;
+        font-size: 19px;
+        letter-spacing: 1px;
+        position: relative;
+        transition: 0.3s;
+        overflow: hidden;
+      }
+
+      ol li a i{
+        width:70px;
+        font-size:25px;
+        text-align: center;
+        padding-left:30px;
+      }
+
+      /*changes are done to be here*/
+      ol li:hover a{
+       /* background:#1357;*/
+        color:#1357a6;
+        letter-spacing: 3px;
+      }
+      button:hover a{
+        color:orange;
+        letter-spacing:2px ;
+      }
+      input{
+        -webkit-appearance: none;
+        visibility: hidden;
+        display:none;
+      }
+
+      span{
+        position: absolute;
+        right: -70px;
+        top: 30px;
+        font-size: 25px;
+        border-radius: 3px;
+        color: #fff;
+        padding: 3px 8px;
+        cursor: pointer;
+        background:#000;
+      }
+
+      #bars{
+        
+        background: red;
+      }
+
+      #check:checked ~ .container{
+        transform: translateX(0);
+      }
+
+      #check:checked ~ .container #bars{
+        display:none;
+      }
+      .book{
+        float: right;
+        right: 0;
+      }
+       
+    /*footer*/
+    footer{
+  background: #f1f1f1;
+  padding: 90px 0;
+}
+ 
+.footer-container{
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+ 
+.logo{
+  width: 130px;
+}
+ 
+.social-media{
+  margin: 20px 0;
+}
+ 
+.social-media a{
+  color: #001a21;
+  margin-right: 25px;
+  font-size: 22px;
+  text-decoration: none;
+  transition: .3s linear;
+}
+ 
+.social-media a:hover{
+  color: #fc5c65;
+}
+ 
+.right-col h1{
+  font-size: 26px;
+}
+ 
+.border{
+  width: 100px;
+  height: 4px;
+  background: #fc5c65;
+}
+ 
+.newsletter-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+ 
+.txtb{
+  flex: 1;
+  padding: 18px 40px;
+  font-size: 16px;
+  color: #293043;
+  background: #ddd;
+  border: none;
+  font-weight: 700;
+  outline: none;
+  border-radius: 30px;
+  min-width: 260px;
+}
+ 
+.btn{
+  padding: 18px 40px;
+  font-size: 16px;
+  color: #f1f1f1;
+  background: #fc5c65;
+  border: none;
+  font-weight: 700;
+  outline: none;
+  border-radius: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: opacity .3s linear;
+}
+ 
+.btn:hover{
+  opacity: .7;
+}
+ 
+.page-content{
+  min-height: 100vh;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+@media screen and (max-width:960px) {
+  .footer-container{
+    max-width: 600px;
+  }
+  .right-col{
+    width: 100%;
+    margin-bottom: 60px;
+  }
+ 
+  .left-col{
+    width: 100%;
+    text-align: center;
+  }
+}
+ 
+ 
+@media screen and (max-width:700px){
+  .btn{
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+    }
+}
+
+      
+    </style>
+
+    </head>
+<body>
+  
+<input type="checkbox" name="" id="check">
+<div class="container">
+  <label for="check">
+    <span class="fas fa-times" id="times"></span>
+    <span class="fas fa-bars" id="bars"></span>
+  </label>
+
+  <div class="head">menu</div>
+  <ol>
+    <li><a href="EmployeeForm1">Add New Employee</a></li>
+    <li><a href="BookNow">Add New Customer</a></li>
+    <li><a href="ShowEmp">See Employee Details</a></li>
+    <li><a href="ShowCustomer">See Customer Details</a></li>
+    <li><a href="AvailabilRooms">Available Rooms</a></li>
+    <li><a href="NotAvailabilRooms">Currently Booked Rooms</a></li>
+
+  </ol>
+</div>
+
+
+  <nav>
+    
+    <!--<div class="menu"><h3>MENU   <i class="fa-solid fa-grip-lines"></i></h3></div>-->
+    <header><h1 class="heading1">AIRA HOTEL</h1>
+    </header>
+   
+    <!--<button name="button" type="button"><a href="BookNow">Book Now</a</button>-->
+    
+  
+  </nav>
+    
+
+<div class="backsection">
+<video  width="100%" height="100%" autoplay loop muted plays-inline class="back-video">
+  <source src="Video.mp4" type="video/mp4">
+
+  Your browser does not support the video tag.
+</video>
+</div>
+
+   <footer>
+      <div class="footer-container">
+        <div class="left-col">
+          <img src="https://www.airahotelbangkok.com/wp-content/themes/airahotel/images/logo.png" alt="" class="logo">
+          <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p class="rights-text">© 2022 Created By <b>Students of Shree Ramdeobaba College</b>  All Rights Reserved.</p>
+        </div>
+ 
+        <div class="right-col">
+          <h1>Our Newsletter</h1>
+          <div class="border"></div>
+          <p>Enter Your Email to get our news and updates.</p>
+          <form action="" class="newsletter-form">
+            <input type="text" class="txtb" placeholder="Enter Your Email">
+            <input type="submit" class="btn" value="submit">
+          </form>
+        </div>
+      </div>
+    </footer>
+
+
+</body>
+</html>
+

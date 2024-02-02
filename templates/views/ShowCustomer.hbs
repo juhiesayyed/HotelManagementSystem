@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <style>
+        table tr td{
+        border:2px solid black;
+        padding: 7px;
+        }
+        table th {
+        border:2px solid black;
+        padding: 7px;
+        }
+        tr {
+        border-bottom: 1px solid #ddd;
+        }
+        .collapsetable{
+        border-collapse: collapse;
+        border: 2px solid black;
+        }
+        tr:nth-child(even) {
+        background-color: #D6EEEE;
+        }
+
+        th:nth-child(even),td:nth-child(even) {
+        background-color: rgba(150, 212, 212, 0.4);
+        }
+    </style>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+<body background="https://static.vecteezy.com/system/resources/previews/000/373/363/original/vector-grunge-paper-background.jpg">
+    <!--<%emplist.forEach(emplo => {%>
+        <p><%= emplyee.firstname %></p>
+    <%})%>-->
+    <center>
+        <h1 style="margin-top:40px ; margin-bottom:30px">Booking Details</h1>
+    <table class="collapsetable" border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone No</th>
+            <th>aadhar No</th>
+            <th>Pan No</th>
+            <th>Check In Date</th>
+            <th>Check Out Date</th>
+            <th>Room Type</th>
+            <th>Floor No</th>
+            <th>Room No</th>
+            <th>Advance Payment</th>
+            <th>Status</th>
+        </tr>
+     {{#each emplist}}
+        <tr>
+        <td>{{firstname}}</td>
+        <td>{{lastname}}</td>
+        <td>{{phone}}</td>
+        <td>{{aadhar}}</td>
+        <td>{{pan}}</td>
+        <td>{{indate}}</td>
+        <td>{{outdate}}</td>
+        <td>{{room_type}}</td>
+        <td>{{floar}}</td>
+        <td>{{roomno}}</td>
+        <td>{{adv_payment}}</td>
+        <td>{{status}}</td>
+        <td>
+            <a href="/CustomerEdit{{this._id}}"><i class="fa fa-pencil" aria-hidden="true" style="padding: 5px;"></i></a>
+            <!--<a  href="/delete1/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');" ><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>-->
+        </td>
+        </tr>
+   {{/each}}
+   </table>
+   </center>
+    
+</body>
+</html>

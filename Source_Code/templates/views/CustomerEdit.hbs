@@ -1,0 +1,278 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update Customer</title>
+    <style>
+        html, body {
+      min-height: 100%;
+      }
+
+      body, div, form, input, select, textarea, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      line-height: 50px;
+      font-size: 60px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 80%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #F9F9F9;
+      box-shadow: 0 0 15px 0 #3263cd; 
+      }
+      .banner {
+      height: 260px;
+      width:500px;
+      background-size: cover;
+      
+      }
+      .banner::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 80%;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #3263cd;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 5px 0 #3263cd;
+      color: #3263cd;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 2%;
+      top: 28px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio, label.checkbox {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      label.radio:before, label.checkbox:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      label.checkbox:before{ border-radius: 5px}
+      input[type=radio]:checked + label:before, label.radio:hover:before,
+      input[type=checkbox]:checked + label:before, label.chekbox:hover:before {
+      border: 2px solid #3263cd;
+      }
+      label.radio:after, label.checkbox:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #3263cd;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #3263cd;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #5b82d7;
+      }
+      @media (min-width: 568px) {
+      .name-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input {
+      width: calc(50% - 20px);
+      }
+      .im{
+        height:250px;
+        align-items: center;
+        justify-content: center;
+        width:500px;
+        align-content: center;
+        margin-left: 470px;
+        border-radius: 12px;
+        border-color: teal;
+        border-width: 15px;
+        border-style:double;
+      }
+      }
+      .title{
+        padding-left: 170px;
+       padding-top: 30px;
+      }
+    </style>
+</head>
+<body>
+<h3 class="title">{{viewTitle}}</h3>
+ <div class="testbox">
+<form action="/CustomerEdit" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{customer._id}}">
+    <div class="item">
+          <p>Name</p>
+          <div class="name-item">
+            <input type="text" name="firstname" placeholder="First" value="{{customer.firstname}}"/>
+            <input type="text" name="lastname" placeholder="Last"  value="{{customer.lastname}}"/>
+          </div>
+        </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" name="phone" placeholder="Mobile" value="{{customer.phone}}">
+    </div>
+      <div class="item">
+          <p>Aadhar Number</p>
+          <input type="text" name="aadhar" value="{{customer.aadhar}}"/>
+      </div>
+
+        <div class="item">
+          <p>Pan Card Number</p>
+          <input type="text" name="pan" value="{{customer.pan}}">
+        </div>
+
+        <!--
+        <div class="item">
+          <p>Check In Date</p>
+          <input type="date" name="indate" value="{{customer.indate}}"/>
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+
+        <div class="item">
+          <p>Check Out Date</p>
+          <input type="date" name="outdate" value="{{customer.outdate}}"/>
+          <i class="fas fa-calendar-alt"></i>
+        </div>-->
+        
+        <div class="item">
+        <label for="room-names">Choose a Room:</label>
+        <input name="room_type" id="dog-names" value="{{customer.room_type}}"/>
+        </div>
+
+        <div class="item">
+        <label for="room-names">Choose Floor:</label>
+        <input name="floar" id="dog-names" value="{{customer.floar}}"/>
+       </div>
+
+       <div class="item">
+          <p>Room No</p>
+          <input type="hidden" name="roomno" value="{{customer.roomno}}"/>
+        </div>
+
+       <label>Status</label>
+        <input type="text" name="status" value="{{customer.status}}">
+       <!-- <div class="question">
+          <p>Status</p>
+          <div class="question-answer">
+            <div>
+              <input type="radio" value="none" id="radio_4" name="time"/>
+              <label for="radio_4" class="radio"><span>Booked</span></label>
+            </div>
+            <div>
+              <input type="radio" value="none" id="radio_5" name="time"/>
+              <label for="radio_5" class="radio"><span>Canceled</span></label>
+            </div>
+          </div>
+        </div>-->
+
+        <div class="item">
+          <p>Advance Payment</p>
+          <input type="text" name="adv_payment" placeholder="$$$" value="{{customer.adv_payment}}"/>
+        </div>
+        
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/ShowCustomer"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+    </div>
+</form>
+
+    
+</body>
+</html>

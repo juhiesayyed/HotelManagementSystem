@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table tr td{
+        border:2px solid black;
+        padding: 7px;
+        }
+        table th {
+        border:2px solid black;
+        padding: 7px;
+        }
+        tr {
+        border-bottom: 1px solid #ddd;
+        }
+        .collapsetable{
+        border-collapse: collapse;
+        border: 2px solid black;
+        }
+        tr:nth-child(even) {
+        background-color: #D6EEEE;
+        }
+
+        th:nth-child(even),td:nth-child(even) {
+        background-color: rgba(150, 212, 212, 0.4);
+        }
+    </style>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+</head>
+<body background="https://static.vecteezy.com/system/resources/previews/000/373/363/original/vector-grunge-paper-background.jpg">
+    <!--<%emplist.forEach(emplo => {%>
+        <p><%= emplyee.firstname %></p>
+    <%})%>-->
+    <center>
+<!--
+        <script>
+            roomlist.forEach(roomlis => {
+            var d1= {{{indate}}};
+            var d2= {{{outdate}}};
+            const dateOne=new Date(d1);
+            const dateTwo=new Date(d2);
+            const time= Math.abs(dateTwo - dateOne);
+            const days= Math.ceil(time / (1000*60*60*24));
+            console.log({{{days}}});
+            
+        });
+          <th>Up Till...</th>
+        </script>-->
+        <h1 style="margin-top:40px ; margin-bottom:30px">NOT AVAILABLE ROOMS</h1>
+    <table class="collapsetable" border="1" style="width: 60%;">
+        <tr>
+            <th>Room No</th>
+            <th>Room Type</th>
+            <th>Floor</th>
+            <th>Name</th>
+            <th>Room Status</th>
+          
+        </tr>
+     {{#each roomlist}}
+     {{#ifEquals status "Booked"}}
+        <tr>
+        <td>{{roomno}}</td>
+        <td>{{room_type}}</td>
+        <td>{{floar}}</td>
+        <td>{{firstname}}  {{lastname}}</td>
+        <td>{{status}}</td>
+        
+        
+        </tr>
+        {{/ifEquals}}
+   {{/each}}
+   </table>
+   </center>
+    
+</body>
+</html>

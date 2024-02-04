@@ -44,6 +44,10 @@ app.get("/",(req,res) =>{
 });
 
 
+
+//First all showing code i have written
+
+//on ShowEmp view it sends data response in form of emplist 
 app.get("/ShowEmp",(req, res) =>{
 database.collection('employees').find({}).toArray((err,result)=>{
     if(err) throw err
@@ -54,6 +58,7 @@ database.collection('employees').find({}).toArray((err,result)=>{
     })  
 })
 
+//on ShowCustomer view it sends data response in form of emplist 
 app.get("/ShowCustomer",(req, res) =>{
     database.collection('bookings').find({}).toArray((err,result)=>{
         if(err) throw err
@@ -63,6 +68,7 @@ app.get("/ShowCustomer",(req, res) =>{
             })
         })  
     })
+
 
 app.get("/EmployeeForm1",(req, res) =>{
     res.render("EmployeeForm1");
@@ -91,7 +97,7 @@ app.post("/EmployeeForm1", async(req, res) =>{
     }
 });
 
-
+//first we will display the data of that id in form
 app.get("/EmployeeEdit:id",(req,res) => {
     EmpRegister.findById(req.params.id, (err,doc)=> {
         if(err) throw err
@@ -102,6 +108,9 @@ app.get("/EmployeeEdit:id",(req,res) => {
     });
 });
 
+
+
+//then we take that updated data and store it into db
 app.post("/EmployeeEdit",(req,res) => {
     try{
     EmpRegister.findOneAndUpdate({ _id : req.body._id}, req.body, {new: true}, (err,doc) =>{
